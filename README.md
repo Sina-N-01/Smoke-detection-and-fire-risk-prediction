@@ -48,22 +48,8 @@ from IPython.display import Image
 !python detect.py --weights runs/train/fire-detection/weights/best.pt --img 640 --conf 0.3 --source ../fire_data/dataset/images/val
 Image(filename='runs/detect/exp/image1.jpg')  # جایگزین با اسم تصویر واقعی
 
-# *کات قابل بهبود:
+# *نکات قابل بهبود:
 اگر دیتاست مخصوص مقاله‌ات هست و خودت جمع‌آوریش کردی، باید به فرمت YOLO (یعنی [class_id x_center y_center width height]) برگردونید.
 !python train.py --img 640 --batch 16 --epochs 50 --data fire.yaml --weights yolov5s.pt --cache --noautoanchor
 
-گام‌های بعدی برای تکمیل پیاده‌سازی مقاله
-# 1.بهبود YOLOv5 برای تشخیص اهداف کوچک
-در مقاله اصلی معمولاً یکی از این موارد برای بهبود تشخیص اهداف کوچک پیاده‌سازی شده:
 
-
-# ساختار پوشه YOLOv5 به فرمت استاندارد
-ما فرض می‌کنیم دیتاست شامل تصاویر و برچسب‌هاست:
- fire_data/
-├── dataset/
-│   ├── images/
-│   │   ├── train/
-│   │   └── val/
-│   └── labels/
-│       ├── train/
-│       └── val/
